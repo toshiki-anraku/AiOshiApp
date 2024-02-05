@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.11 AS backend
 
 WORKDIR /
 
@@ -13,3 +13,4 @@ WORKDIR /usr/src
 EXPOSE 80
 
 CMD ["/startup.sh"]
+

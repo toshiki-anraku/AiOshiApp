@@ -5,6 +5,7 @@ services:
         build:
             context: ./
             dockerfile: Dockerfile
+            target: backend
         volumes:
             - type: bind
               source: ./src
