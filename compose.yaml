@@ -8,7 +8,12 @@ services:
       target: backend
     volumes:
       - ./src:/usr/src
+      - ./.secret:/.secret
     ports:
       - 8080:80
+    environment: 
+      - HOMEPATH=/usr/src
+      - OPENAI_API_KEY_PATH=/.secret/openai.txt
+      - GOOGLE_API_KEY_PATH=/.secret/gemini.txt
     container_name: backend
     tty: true
