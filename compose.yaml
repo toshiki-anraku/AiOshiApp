@@ -11,9 +11,21 @@ services:
       - ./.secret:/.secret
     ports:
       - 8080:80
-    environment: 
-      - HOMEPATH=/usr/src
-      - OPENAI_API_KEY_PATH=/.secret/openai.txt
-      - GOOGLE_API_KEY_PATH=/.secret/gemini.txt
+    env_file:
+      - backend.env
     container_name: backend
     tty: true
+  
+
+  postgres:
+    container_name: postgres_con
+    # build: ./image/postgres
+    image: postgres:15
+    restart: always
+    ports: 
+      - "5432:5432"
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
+    env_file:
+      - db.env
+
