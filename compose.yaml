@@ -4,8 +4,8 @@ services:
   backend:
     build:
       context: ./
-      dockerfile: Dockerfile
-      target: backend
+      dockerfile: Dockerfile_local
+      target: backend-local
     volumes:
       - ./backend:/usr/src
       - ./.secret:/.secret
