@@ -1,7 +1,7 @@
 -- DB作成
-CREATE DATABASE oshi_ai_db;
+CREATE DATABASE ai_oshi_db;
 -- 作成したDBに接続
-\c oshi_ai_db;
+\c ai_oshi_db;
 -- テーブル作成
 DROP TABLE IF EXISTS oshi_setting;
 CREATE TABLE oshi_setting (
