@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile_local
       target: backend-local
     volumes:
-      - ./backend:/usr/src
+      - ./src:/usr/src
       - ./.secret:/.secret
     ports:
       - 80:80
